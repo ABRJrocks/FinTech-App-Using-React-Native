@@ -51,7 +51,10 @@ const Home = (props) => {
         />
       </View>
       <View style={styles.section3}>
-        <TouchableOpacity style={styles.homeBtns}>
+        <TouchableOpacity
+          style={styles.homeBtns}
+          onPress={() => props.navigation.navigate("Scan")}
+        >
           <Text
             style={{
               color: "#5BB1E0",
