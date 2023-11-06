@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Recent from "./src/screens/Recent";
 import Scan from "./src/screens/scan";
+import History from "./src/screens/History";
 
 export default function App(props) {
   const Stack = createNativeStackNavigator();
@@ -31,6 +32,11 @@ export default function App(props) {
           <Stack.Screen
             name="Scan"
             component={Scan}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="History"
+            component={History}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

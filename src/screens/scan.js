@@ -107,3 +107,5 @@ const styles = StyleSheet.create({
     marginHorizontal: 115,
   },
 });
+
+//   content: ["./App.{js,jsx,ts,tsx}", "./screens/**/*.{js,jsx,ts,tsx}"],
