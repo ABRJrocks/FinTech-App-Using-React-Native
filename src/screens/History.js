@@ -12,7 +12,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 
-const RecentScreen = (props) => {
+const History = (props) => {
   const [searchText, setSearchText] = useState("");
   const [recentItems, setRecentItems] = useState([
     {
@@ -245,4 +245,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RecentScreen;
+export default History;

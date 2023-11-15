@@ -32,24 +32,26 @@ const Home = (props) => {
           />
         </TouchableOpacity>
       </View>
-      <View style={styles.addButton}>
-        <Image
-          style={{
-            width: 150,
-            height: 150,
-            zIndex: 0,
-          }}
-          source={require("../../assets/lb.png")}
-        />
-        <Image
-          style={{ width: 115, height: 115, zIndex: 1, top: -131 }}
-          source={require("../../assets/lm.png")}
-        />
-        <Image
-          style={{ width: 60, height: 60, zIndex: 2, top: -220 }}
-          source={require("../../assets/lt.png")}
-        />
-      </View>
+      <TouchableOpacity onPress={() => props.navigation.navigate("Add")}>
+        <View style={styles.addButton}>
+          <Image
+            style={{
+              width: 150,
+              height: 150,
+              zIndex: 0,
+            }}
+            source={require("../../assets/lb.png")}
+          />
+          <Image
+            style={{ width: 115, height: 115, zIndex: 1, top: -131 }}
+            source={require("../../assets/lm.png")}
+          />
+          <Image
+            style={{ width: 60, height: 60, zIndex: 2, top: -220 }}
+            source={require("../../assets/lt.png")}
+          />
+        </View>
+      </TouchableOpacity>
       <View style={styles.section3}>
         <TouchableOpacity
           style={styles.homeBtns}
