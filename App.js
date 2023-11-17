@@ -8,6 +8,8 @@ import Recent from "./src/screens/Recent";
 import Scan from "./src/screens/scan";
 import History from "./src/screens/History";
 import Add from "./src/screens/Add";
+import Wallet from "./src/screens/Wallet";
+import Card from "./src/screens/Card";
 
 export default function App(props) {
   const Stack = createNativeStackNavigator();
@@ -43,6 +45,16 @@ export default function App(props) {
           <Stack.Screen
             name="Add"
             component={Add}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Wallet"
+            component={Wallet}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Card"
+            component={Card}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

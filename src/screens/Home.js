@@ -89,7 +89,7 @@ const Home = (props) => {
       <View style={styles.navigationBar}>
         <TouchableOpacity
           style={styles.navBtn}
-          onPress={() => console.log("pressed")}
+          onPress={() => props.navigation.navigate("Wallet")}
         >
           <Image
             style={styles.navIcon}
@@ -170,6 +170,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingHorizontal: 30,
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   navText: {
     color: "#919191",
