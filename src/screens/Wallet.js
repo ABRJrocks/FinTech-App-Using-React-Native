@@ -44,8 +44,9 @@ const Wallet = (props) => {
       </View>
 
       {/* Card */}
-      <Image style={styles.card} source={require("../../assets/card.png")} />
-
+      <TouchableOpacity onPress={() => props.navigation.navigate("Card")}>
+        <Image style={styles.card} source={require("../../assets/card.png")} />
+      </TouchableOpacity>
       {/* Bottom Menu */}
       <View style={styles.navigationBar}>
         <TouchableOpacity
