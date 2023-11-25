@@ -11,6 +11,7 @@ import Add from "./src/screens/Add";
 import Wallet from "./src/screens/Wallet";
 import Card from "./src/screens/Card";
 import Conatacts from "./src/screens/Contacts";
+import TopUP from "./src/screens/TopUp";
 
 export default function App(props) {
   const Stack = createNativeStackNavigator();
@@ -61,6 +62,11 @@ export default function App(props) {
           <Stack.Screen
             name="Contacts"
             component={Conatacts}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="TopUp"
+            component={TopUP}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

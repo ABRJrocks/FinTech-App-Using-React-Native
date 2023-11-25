@@ -9,8 +9,10 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 const Settings = (props) => {
+  const navigation = useNavigation();
   const menuItems = [
     { label: "Auto Topup", icon: require("../../assets/topup.png") },
     {
@@ -57,7 +59,11 @@ const Settings = (props) => {
       </Text>
       <View style={styles.menu}>
         {menuItems.map((menuItem, index) => (
-          <TouchableOpacity key={index} style={styles.menuItem}>
+          <TouchableOpacity
+            key={index}
+            style={styles.menuItem}
+            onPress={() => handleMenuItemPress(menuItem.label)}
+          >
             <Image source={menuItem.icon} style={styles.menuItemIcon} />
             <Text style={styles.menuItemText}>{menuItem.label}</Text>
           </TouchableOpacity>
@@ -65,6 +71,24 @@ const Settings = (props) => {
       </View>
     </SafeAreaView>
   );
+  function handleMenuItemPress(label) {
+    console.log(`Selected: ${label}`);
+    switch (label) {
+      case "Auto Topup":
+        navigation.navigate("TopUp");
+        break;
+      case "Friendly Reminder":
+        navigation.navigate("ReminderScreen");
+        break;
+      case "Favorite":
+        navigation.navigate("FavoriteScreen");
+        break;
+      // Add more cases for other menu items here
+      default:
+        console.log(`Navigate to screen related to ${label}`);
+        break;
+    }
+  }
 };
 
 const styles = StyleSheet.create({
