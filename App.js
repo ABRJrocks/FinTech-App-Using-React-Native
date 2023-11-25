@@ -10,6 +10,7 @@ import History from "./src/screens/History";
 import Add from "./src/screens/Add";
 import Wallet from "./src/screens/Wallet";
 import Card from "./src/screens/Card";
+import Conatacts from "./src/screens/Contacts";
 
 export default function App(props) {
   const Stack = createNativeStackNavigator();
@@ -55,6 +56,11 @@ export default function App(props) {
           <Stack.Screen
             name="Card"
             component={Card}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Contacts"
+            component={Conatacts}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>

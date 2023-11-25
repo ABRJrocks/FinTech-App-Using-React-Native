@@ -99,7 +99,7 @@ const Home = (props) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.navBtn}
-          onPress={() => console.log("pressed")}
+          onPress={() => props.navigation.navigate("Contacts")}
         >
           <Image
             style={styles.navIcon}
