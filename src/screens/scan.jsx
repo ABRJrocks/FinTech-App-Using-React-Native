@@ -50,23 +50,59 @@ const Scan = (props) => {
         />
       </View>
 
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-        style={StyleSheet.absoluteFillObject}
-      >
-        {scanned && (
-          <Button
-            title={"Tap to Scan Again"}
-            onPress={() => setScanned(false)}
-          />
-        )}
-        <TouchableOpacity
-          onPress={() => props.navigation.navigate("Home")}
-          style={styles.button}
+      <View style={styles.scanScreen}>
+        <BarCodeScanner
+          onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+          style={StyleSheet.absoluteFillObject}
         >
-          <Text style={{ color: "white", fontWeight: "bold" }}>Go back</Text>
+          {scanned && (
+            <Button
+              title={"Tap to Scan Again"}
+              onPress={() => setScanned(false)}
+            />
+          )}
+          {/* <TouchableOpacity
+            onPress={() => props.navigation.navigate("Home")}
+            style={styles.button}
+          >
+            <Text style={{ color: "white", fontWeight: "bold" }}>Go back</Text>
+          </TouchableOpacity> */}
+        </BarCodeScanner>
+      </View>
+      <View style={styles.section3}>
+        <TouchableOpacity
+          style={styles.homeBtns}
+          onPress={() => props.navigation.navigate("Scan")}
+        >
+          <Text
+            style={{
+              color: "white",
+              marginRight: 10,
+              fontSize: 16,
+            }}
+          >
+            Scan
+          </Text>
+          <Image
+            source={require("../../assets/scan.png")}
+            style={{ width: 22, height: 22, resizeMode: "contain" }}
+          />
         </TouchableOpacity>
-      </BarCodeScanner>
+        <TouchableOpacity
+          style={styles.homeBtns}
+          onPress={() => props.navigation.navigate("MyQR")}
+        >
+          <Text
+            style={{
+              color: "white",
+              marginRight: 10,
+              fontSize: 16,
+            }}
+          >
+            My QR
+          </Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };
@@ -105,6 +141,40 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginHorizontal: 115,
+  },
+  scanScreen: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50%",
+    width: "100%",
+    marginTop: 20,
+    marginBottom: 20,
+    borderColor: "#D9D9D9",
+    color: "#999999",
+    position: "absolute",
+    top: 100,
+  },
+  section3: {
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: 20,
+    position: "absolute",
+    bottom: 50,
+    left: 0,
+    right: 0,
+  },
+  homeBtns: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#5BB1E0",
+    width: 160,
+    height: 55,
+    textAlign: "center",
+    justifyContent: "center",
+    borderRadius: 10,
+    marginHorizontal: 10,
   },
 });
 

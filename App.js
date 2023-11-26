@@ -12,6 +12,7 @@ import Wallet from "./src/screens/Wallet";
 import Card from "./src/screens/Card";
 import Conatacts from "./src/screens/Contacts";
 import TopUP from "./src/screens/TopUp";
+import MyQR from "./src/screens/MyQR";
 
 export default function App(props) {
   const Stack = createNativeStackNavigator();
@@ -67,6 +68,11 @@ export default function App(props) {
           <Stack.Screen
             name="TopUp"
             component={TopUP}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="MyQR"
+            component={MyQR}
             options={{ headerShown: false }}
           />
         </Stack.Navigator>
